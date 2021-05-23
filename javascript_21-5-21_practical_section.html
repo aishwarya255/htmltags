@@ -1,0 +1,291 @@
+<!DOCTTYPE html>
+    <html>
+        <title>first page</title>
+        <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+<style>
+*{
+margin:0;
+padding:0;
+outline:none;
+}
+
+    body
+    
+    {
+     background-image: url("ann1.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    }
+/* the animation code */
+@keyframes example
+    {
+       
+        0%{background-color: red;left: 0px; top: 0px;}
+        25%{background-color: yellow;left: 100%; top: 0px;}
+        58%{background-color: blue;left:  100%px;top: 100%px;}
+        75%{background-color: green; left: 0px;top: 100%px;}
+        100%{background-color: cyan; left: 0px;top: 0px;}
+       
+        
+    }
+/*the element to apply the animation to */
+    div{
+        padding-top: 3px;
+        padding-left: 4px;
+        font-family: sans-serif;
+        width: 180px;
+        height: 50px;
+        background-color: red;
+        animation-name: example;
+        animation-duration: 10s;
+        animation-delay: 10s;
+        position: relative;
+        
+       animation-iteration-count: infinite;
+        color: white;
+    }
+
+
+
+
+</style>
+        
+        
+<body>
+    
+     <h2> <b>My Basic Javascript Page</b></h2> 
+    <div><h1>WELCOME</h1></div>    
+        
+  <h2> <b>InnerHTML</b></h2> 
+    <br>
+     <p id="demo"></p>
+    <button type="button" onclick="document.getElementById('demo').innerHTML= 5 + 6;">click</button><br>
+    <br>
+    <h2><b>JavaScript Arrays</b></h2><br>
+
+  <script>
+  
+      var car =["saab", "volvo", "bmw"] ;  
+      document.write(car);
+      document.getElementById('demo').innerHTML=car;
+   
+    </script> 
+    <br>
+    <h2><b>Using document.write(), JavaScript Keywords,JavaScript Variables,</b></h2><br>
+  <p>the result is : </p>
+    <p id="demoss"></p>
+     <script>
+    
+    var x = myFunction(4, 3);
+        document.write(x);
+        
+        function myFunction(a, b){
+            return a * b;
+        }
+    
+    
+    </script> 
+    
+    <br>
+    <p id="demost"></p>  
+   <script>
+    function toCelsius(fahrenheit){
+        return (5/9) * (fahrenheit-32);
+    }
+    document.write(toCelsius);
+    
+    </script> 
+      <br><h2><b>Functions Used as Variable Values</b></h2><br>
+    <p id="dem"></p>
+    <script>
+    var x=toCelsius(77);
+    var text = "the temperature is " + x +" Celcius";
+    document.write(text);
+         function toCelsius(fahrenheit){
+        return (5/9) * (fahrenheit-32);
+    }
+        
+   
+    
+    
+    </script>
+  <br><h2><b>JavaScript Objects </b></h2><br>
+    <script>
+        var person = {
+        firstname: "aishwarya",
+        lastname: "pushparaj",
+        age:24  
+        };
+        document.write(" <br>"+person.firstname +" <br>" + person.lastname +" <br>"+ "is" +" <br>"+ person.age +"<br> " + "years of old.");
+        
+        </script> 
+    
+      <br><h2><b>The this Keyword</b></h2><br>
+    <p id="de"></p>
+    <script>
+    var person ={
+        firstname: "aishwarya",
+        lastname: "pushparaj",
+        id: 5566,
+        fullname: function(){
+            return this.firstname + " " + this.lastname;
+        }     
+        
+    };
+    document.getElementById("de").innerHTML=person.fullname();
+    </script>
+         <br> 
+     <button onclick="this.style.display='none'"  >clik remove me</button><br><br>
+     <p id="dee"></p>
+    <script>
+    var person1 = {
+        
+        fullname: function(){
+            return this.firstname + " " +this.lastname;
+        }
+    }
+    
+    var person2 ={
+        firstname :"aishwarya",
+        lastname:"pushparaj",
+    }
+    var x=
+        person1.fullname.call(person2);
+        document.getElementById("dee").innerHTML=x;
+    
+    </script>
+      <br><br>
+    <script>
+    function validationfoem(){
+        var x=document.foems["myfoem"]["fname"].value;
+        if(x==""){
+            alert("name must be filled out");
+            return false;
+        }
+    }
+    
+    
+    </script>
+      <br><h2><b>JavaScript Events </b></h2><br>
+    <form name="myform" action="/day3.html" onsubmit="return validateform()" method="post">
+    
+    Name : <input type="text" name="fname"><br><br>
+        <input type="submit" value="submit"> <br><br>
+        
+    
+    </form>
+    
+    <br><h2><b>Select number in a given range </b></h2><br>
+    NUMBER:   <input id="id1" type="number" min="100" max="300" required> <br><br>
+    <button onclick="myfunction()">ok</button>
+    <p id="demonst"></p>
+    <script>
+    function myfunction(){
+        var inpObj = document.getElementById("id1");
+        if(!inpObj.checkValidity()){
+            
+            document.getElementById("demonst").innerHTML=inpObj.validationMessage;
+        }
+        else{
+            document.getElementById("demonst").innerHTML="input ok";
+        }
+    }
+    
+    </script>
+    <br>
+   
+    <h2>join()</h2>
+
+<p>The join() method joins array elements into a string.</p>
+
+<p>It this example we have used " * " as a separator between the elements:</p>
+
+<p id="demo2"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo2").innerHTML = fruits.join(" * ");
+</script>
+<br>
+    <h2>pop()</h2>
+
+<p>The pop() method removes the last element from an array.</p>
+
+<p id="demo11"></p>
+<p id="demo22"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo11").innerHTML = fruits;
+fruits.pop();
+document.getElementById("demo22").innerHTML = fruits;
+</script>
+ <br>
+    <h2>push()</h2>
+
+<p>The push() method appends a new element to an array.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo33"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  fruits.push("Kiwi");
+  document.getElementById("demo33").innerHTML = fruits;
+}
+</script>
+   <br>
+    <h2>shift()</h2>
+
+<p>The shift() method removes the first element of an array (and "shifts" all other elements to the left):</p>
+
+<p id="demo44"></p>
+<p id="demo55"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo44").innerHTML = fruits;
+fruits.shift();
+document.getElementById("demo55").innerHTML = fruits;
+</script>
+    <br>
+   <h2>JavaScript For Loop</h2>
+
+<p id="demo66"></p>
+
+<script>
+var text = "";
+var i;
+for (i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}
+document.getElementById("demo66").innerHTML = text;
+</script> 
+    <br>
+    <h2>JavaScript For/In Loop</h2>
+
+<p>The for/in statement loops through the properties of an object.</p>
+
+<p id="demo77"></p>
+
+<script>
+var txt = "";
+var person = {fname:"John", lname:"Doe", age:25}; 
+var x;
+for (x in person) {
+  txt += person[x] + " ";
+}
+document.getElementById("demo77").innerHTML = txt;
+</script>
+    <br>
+
+
+
+</body>
